@@ -18,7 +18,7 @@ default_args = {
 }
 
 dag = DAG(
-    dag_id='dag-workflow-1-hop',
+    dag_id='dag-job-1-hop',
     default_args=default_args,
     schedule_interval='@once',
     catchup=False,
@@ -27,7 +27,7 @@ dag = DAG(
 
 job = CarteJobOperator(
     dag=dag,
-    task_id='tsk-workflow-1-hop',
-    job='INTEGRACAO/workflow',
+    task_id='tsk-job-1-hop',
+    job='INTEGRACAO/job',
     level= 'Basic'
 )
